@@ -1,0 +1,23 @@
+{% extends "base.html" %}
+
+{% load i18n %}
+
+{% block head_title %}{% trans "Sign Out" %}{% endblock %}
+
+{% block content %}
+
+<br><br><br><br><br><br><br><br>
+<div class="row">
+    <div class="col-lg-8 text-center mx-auto">
+        <div class="card text-center mx-auto">
+            <div class="card-body">
+              <h5 class="card-title">Welcome to your home page!</h5>
+              <p class="card-text">Do you want to sign out?</p>
+              <a class="btn btn-primary" href="{% url 'account_logout' %}">Sign Out</a>
+        </div>    
+        <div class="card text-center">
+
+    </div>
+
+</div>
+{% endblock %}

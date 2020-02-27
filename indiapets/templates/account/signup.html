@@ -1,0 +1,78 @@
+{% extends 'base.html' %}
+{% load crispy_forms_tags %}
+{% load widget_tweaks %}
+{% load static %}
+{% load i18n %}
+
+{% block head_title %}{% trans "Signup" %}{% endblock %}
+
+<!-- {% block register1 %}
+<script src='https://www.google.com/recaptcha/api.js'></script>
+  <form method="post" action="{% url 'account_signup' %}">
+    {% csrf_token %}
+    {{form.as_p}}
+  </form>
+{% endblock %} -->
+
+
+{% block register %}
+
+<link rel="stylesheet" href="{% static  'css/style.css' %}">
+
+
+
+<body>
+  <div class="container">
+    <div class="row">
+      <div class="col-sm-9 col-md-6 col-lg-4 mx-auto">
+        <div class="card card-signin my-5">
+          <div class="card-body">
+             <h3 class="card-title text-center font-weight-bold">Sign Up</h3>
+             <script src='https://www.google.com/recaptcha/api.js'></script>
+             <form class="form-signin mx-auto" id="signup_form" method="post" action="{% url 'account_signup' %}">
+                {% csrf_token %}
+                {% if form.errors %}
+                    {% for field in form %}
+                        {% for error in field.errors %}
+                            <div class="alert alert-danger">
+                                <strong>{{ error|escape }}</strong>
+                            </div>
+                        {% endfor %}
+                    {% endfor %}
+                    {% for error in form.non_field_errors %}
+                        <div class="alert alert-danger">
+                            <strong>{{ error|escape }}</strong>
+                        </div>
+                    {% endfor %}
+                {% endif %}
+
+             <br>
+              {{ form.first_name | add_class:"form-control" | attr:"placeholder:First Name" }}<br>
+              {{ form.last_name | add_class:"form-control" | attr:"placeholder:Last Name" }}<br>
+              {{ form.email | add_class:"form-control" | attr:"placeholder:email" }}<br>
+              {{ form.password1 | add_class:"form-control" | attr:"placeholder:password"  }}<br>
+              {{ form.password2 | add_class:"form-control" | attr:"placeholder:confirm password" }}<br>
+              <label for="id_captcha">Captcha:</label> <div class="g-recaptcha" id="recaptcha-captcha" data-sitekey="6Lc189IUAAAAALiLOPk9cuEZw_oh5UL3P3ZlzCgI" ></div>
+              {% if redirect_field_value %}
+              <input type="hidden" name="{{ redirect_field_name }}" value="{{ redirect_field_value }}" />
+              {% endif %}
+              {% if redirect_field_value %}
+              <input type="hidden" name="{{ redirect_field_name }}" value="{{ redirect_field_value }}" />
+              {% endif %}<br>
+              <button type='submit' class="btn btn-info btn-block text-uppercase">Register</button>
+              <a  class="btn btn-primary btn-block text-uppercase" href="/accounts/google/login/?process=login">Google</a> 
+              <br><a href="{% url 'account_login' %}" >Already you have account?</a><br>
+            </form>
+            <!-- {% load socialaccount %}
+            <a href="{% provider_login_url 'facebook' method='oauth2' %}">Facebook OAuth2</a> -->
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
+
+
+
+
+{% endblock %}
