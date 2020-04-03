@@ -1,10 +1,44 @@
 {% extends "base.html" %}
 {% load static %}
 {% block body %}
+    <head>
+        <style>
+            .Options{
+                width: 0;
+                height: 0;
+                display: none;
+            }
+        </style>
+        
+    </head>
     <div>
+        <div>
 
+        </div>
+        <form>
+            <input type="text" value='   VineelRaj'readonly='readonly'>
+            <div onclick="Expand()" style='cursor:pointer;'>options</div>
+            <ul class ='Options'>
+                <li><input type='checkbox'/>Regarding Pets</li>
+                <li><input type='checkbox'/>Regarding Doctors</li>
+                <li><input type='checkbox'/>Regarding Information</li>
+            </ul>
+            
+            <input type='text' placeholder="Give Your Feedback" required='required'/>
+            <input type="submit" value="Submit"/> 
+        </form>
     </div>
-    <form>
-        <input type='text' >
-    </form>
+    <script>
+        function Expand(){
+            Option = document.getElementsByClassName('Options')[0]
+            if (Option.style.display == ''){
+                Option.style.display = 'block'
+                console.log('111111111')
+            }
+            else{
+                Option.style.display = ''
+            }
+
+        }   
+    </script>
 {% endblock %}
