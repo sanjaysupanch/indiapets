@@ -4,20 +4,45 @@
     <head>
         <style>
             .Options{
-                width: 0;
-                height: 0;
                 display: none;
+                list-style: none;
+                background-color: royalblue;
+                width: 20vw;
+                height: 6vw;
+                padding-top: 1%;
+            }
+            form{
+                background-color: rgba(33, 133, 158, 0.493);
+                width: 40vw;
+                height: 20vw;
+                /* height: 100%; */
+                margin-left: 10%;
+                padding-left: 1%;
+                padding-top: 1%;
+                /* font-size: 1vw; */
+            }
+            form input[type='text']{
+                width:80%;
+                
+            }
+            form input[type='checkbox']{
+                border: none;
+            }
+            li{
+                display: block;
+                font-size: 1vw;
             }
         </style>
         
     </head>
-    <div>
+    <div style="width: 70vw;margin-left: 15%;margin-top: 10%;color: rgb(255, 255, 255);">
         <div>
 
         </div>
         <form>
-            <input type="text" value='   VineelRaj'readonly='readonly'>
-            <div onclick="Expand()" style='cursor:pointer;'>options</div>
+            <!-- <input type="text" value='   VineelRaj'readonly='readonly' style="border: none;"> -->
+            <div></div>
+            <div onclick="Expand()" style='cursor:pointer;width: 5vw;background-color: rgb(7, 79, 100);text-align: center;'>options</div>
             <ul class ='Options'>
                 <li><input type='checkbox'/>Regarding Pets</li>
                 <li><input type='checkbox'/>Regarding Doctors</li>
@@ -38,7 +63,6 @@
             else{
                 Option.style.display = ''
             }
-
         }   
     </script>
 {% endblock %}
