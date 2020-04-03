@@ -1,0 +1,196 @@
+@media only screen and (max-width: 1400px) {
+    .page-title {
+        padding: 300px 0px 0px 0px;
+    }
+    #google-map {
+        height: 420px;
+    }
+}
+@media only screen and (max-width: 1200px) {
+.slider-container {
+    min-height:inherit;
+}
+.back-to-top {
+    position: relative !important;
+    bottom: inherit;
+    right: inherit;
+    width: 100%;
+    height: 60px;
+    display: inline-block !important;
+    vertical-align: bottom;
+}
+}
+@media only screen and (max-width: 900px) {
+    .grid .unit {
+        width: 100% !important;
+    }
+    #site-container {
+        border-top: none !important;
+    }
+    .nav-container {
+        position: relative;
+        z-index:inherit;
+    }
+    .nav {
+        background-color: rgba(255, 255, 255, 0.1);
+    }
+    .nav > li {
+        float: none;
+    }
+    .nav > li > .parent {
+        background-image: url("../assets/images/downArrow.png");
+        background-repeat: no-repeat;
+        background-position: 95% 50%;
+    }
+    .nav li li .parent {
+        background-image: url("../assets/images/downArrow.png");
+        background-repeat: no-repeat;
+        background-position: 95% 50%;
+    }
+    .nav li li .parent:hover {
+        background-image: url("../assets/images/downArrow.png");
+        background-repeat: no-repeat;
+        background-position: 95% 50%;
+    }
+    .nav {
+        float: none;
+        line-height: 40px;
+        padding-right: 0px;
+    }
+    .nav ul li:first-child {
+        margin-top: 0px;
+    }
+    .nav ul li:last-child {
+        margin-bottom: 0px;
+    }
+    .nav ul {
+        display: block;
+        width: 100%;
+    }
+    .nav > li.hover > ul,
+    .nav li li.hover ul {
+        position: static;
+    }
+    .nav > li > a:hover {
+        background-color: inherit;
+    }
+    .nav li li a:hover,.nav li li li a:hover {
+        border-left: none;
+    }
+    .nav a,.nav ul li a {
+        padding: 5px 40px;
+    }
+    .maincontainer {
+        padding-top: 60px;
+    }
+    .footer-widget {
+        float: none;
+        width: 100%;
+        padding: 0px 0px 60px 0px;
+    }
+
+}
+@media only screen and (max-width: 800px) {
+    .ns_nerveSlider .ns_slideContent div span {
+        font-size: 24px;
+        padding: 20px 40px;
+    }
+}
+@media only screen and (max-width: 768px) {
+    h1 {
+        font-size: 34px;
+    }
+    h2 {
+        font-size: 30px;
+    }
+    h3 {
+        font-size: 26px;
+    }
+    h4 {
+        font-size: 22px;
+    }
+    h5 {
+        font-size: 18px;
+    }
+    h6 {
+        font-size: 16px;
+    }
+    ul.resp-tabs-list {
+        display: none;
+    }
+    h2.resp-accordion {
+        display: block;
+    }
+    .resp-tab-content {
+        padding: 20px;
+    }
+    .resp-vtabs .resp-tabs-container {
+        border: none;
+        float: none;
+        width: 100%;
+        min-height: initial;
+        clear: none;
+    }
+    .resp-tab-active {
+        border: none !important;
+        background-color: #66A7C5 !important;
+        color: #fff !important;
+    }
+    .resp-accordion-closed {
+        display: none !important;
+    }
+    .resp-tabs-container > div {
+        margin-top: 0px;
+        margin-bottom: 0px;
+    }
+    blockquote {
+        padding-left:40px;
+    }
+    blockquote:before {
+	   width: 10px;
+    }
+    blockquote:after {
+	   content: '';
+    }
+    .nav-buttons span{
+        width: 100% !important;
+    }
+    .car-prev.nav-icon,
+    .car-next.nav-icon {
+        width: 50% !important;
+    }
+    .car-prev.nav-icon {
+        background-position: center left !important;
+    } 
+    .car-next.nav-icon {
+        background-position: center right !important;
+    }
+}
+@media only screen and (max-width: 640px) {
+    .postcontent,.gallerycontent {
+        float:none;
+        width: 100%;
+    }
+    .blogimage,.galleryimage {
+        position: relative !important;
+        width: 100%;
+        height: 200px;
+    }
+    #caroufredsel-main-wrapper .slidetext {
+        font-size: 24px;
+    }
+}
+@media only screen and (max-width: 480px) {
+    .ns_nerveSlider .ns_slideContent div span{
+        display: none !important;
+    }
+    #caroufredsel-main-wrapper .slidetext {
+        display: none !important;
+    }
+    .nav-buttons span,blockquote p,.testimonial .testimonial-text {
+        font-size: 15px;
+    }
+    .page-title {
+        padding: 0px !important;
+    }
+}

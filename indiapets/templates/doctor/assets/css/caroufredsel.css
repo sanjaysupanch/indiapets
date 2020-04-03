@@ -1,0 +1,95 @@
+#carousel-container {
+    position: relative;
+    width: 100%;
+    overflow: hidden;
+}
+#caroufredsel-main-wrapper .slidetext {
+    padding: 20px 40px;
+    position: absolute;
+    right: 0;
+    bottom: 40px;
+    min-width: 30%;
+    max-width: 60%;
+    overflow: hidden;
+    opacity: 0;
+}
+#caroufredsel-main-wrapper .slidetext a {
+    text-decoration: none;
+}
+#caroufredsel-main-wrapper .slidetext {
+    font-size: 36px;
+    line-height: 1;
+    margin: 0px;
+}
+#caroufredsel-main-wrapper {
+    left: 0;
+    position: absolute;
+    width: 100%;
+    overflow: hidden;
+}
+#caroufredsel-main-wrapper #caroufredsel-main div.carousel-item {
+    float: left;
+    position: relative;
+}
+#caroufredsel-main-wrapper #caroufredsel-main div.carousel-item img {
+    vertical-align: bottom;
+    height:auto;
+    max-width:100%;
+}
+#caroufredsel-main-wrapper .block {
+    display: block;
+    width: 50%;
+    top: 0;
+    position: absolute;
+    height: 100%;
+}
+#caroufredsel-main-wrapper .car-prev.block {
+    left: -600px;
+}
+#caroufredsel-main-wrapper .car-next.block {
+    right: -600px;
+}
+.bottomslider {
+    width: 100%;
+    position: relative;
+    overflow: hidden;
+}
+.nav-buttons {
+    width: 100%;
+    max-width: 1200px;
+    margin: 0px auto;
+    overflow: hidden;
+    padding: 0px 40px;
+}
+.car-prev.nav-icon,
+.car-next.nav-icon {
+    width: 60px;
+    height: 60px;
+    vertical-align: middle;
+    display: block;
+    float: right;
+    background-position: center center;
+    background-repeat: no-repeat;
+    -webkit-transition:opacity 0.2s ease-in-out;
+    -moz-transition:opacity 0.2s ease-in-out;
+    -o-transition:opacity 0.2s ease-in-out;
+    -ms-transition:opacity 0.2s ease-in-out;
+    transition:opacity 0.2s ease-in-out;
+    opacity: 0.5;
+}
+.car-prev.nav-icon:hover,
+.car-next.nav-icon:hover {
+    opacity: 1;  
+}
+.nav-buttons span{
+    float: left;
+    line-height: 1.5;
+    font-size: 17px;
+    padding: 9px 0px;
+}
+.car-prev.nav-icon {
+    background-image: url('../assets/images/s-left.png');
+} 
+.car-next.nav-icon {
+    background-image: url('../assets/images/s-right.png');
+}
