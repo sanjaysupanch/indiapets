@@ -13,7 +13,7 @@ MEDIA_DIR = os.path.join(BASE_DIR,'media')
 SECRET_KEY = 'w8$wisgw)k48nb&yn2ih*4icfcktg1m3b7+9(z1^y!^!te2)d@'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
+DEBUG = True
 
 ALLOWED_HOSTS = ['*']
 
@@ -69,7 +69,7 @@ TEMPLATES = [
                 'django.template.context_processors.request',
                 'django.contrib.auth.context_processors.auth',
                 'django.contrib.messages.context_processors.messages',
-                #'django.template.context_processors.request',
+                'django.template.context_processors.request',
             ],
         },
     },
@@ -126,17 +126,14 @@ USE_TZ = True
 
 
 
-STATIC_URL = '/static/'
 MEDIA_URL='/media/'
-EMAIL_USE_TLS = True
-EMAIL_HOST = 'smtp.gmail.com'
-EMAIL_PORT = 587
-EMAIL_HOST_USER = 'pioneer.deo@gmail.com'
-EMAIL_HOST_PASSWORD = 'tommyjerry'
 
-STATICFILES_DIRS = [
-    STATIC_DIR,
-]
+
+# STATICFILES_DIRS = [
+#     STATIC_DIR,
+# ]
+STATIC_URL = '/static/'
+STATIC_ROOT = os.path.join(BASE_DIR, 'static/')
 
 SOCIALACCOUNT_PROVIDERS = {
     'facebook': {
@@ -173,6 +170,11 @@ SOCIALACCOUNT_PROVIDERS = {
     }
 }
 
+EMAIL_USE_TLS = True
+EMAIL_HOST = 'smtp.gmail.com'
+EMAIL_PORT = 587
+EMAIL_HOST_USER = 'pioneer.deo@gmail.com'
+EMAIL_HOST_PASSWORD = 'tommyjerry'
 
 SITE_ID = 1
 ACCOUNT_EMAIL_REQUIRED = True
@@ -184,8 +186,8 @@ ACCOUNT_UNIQUE_EMAIL = True
 ACCOUNT_EMAIL_CONFIRMATION_EXPIRE_DAYS =1
 ACCOUNT_EMAIL_VERIFICATION = "mandatory"
 ACCOUNT_LOGOUT_ON_GET =True
-LOGIN_REDIRECT_URL = '/home/'
-ACCOUNT_LOGOUT_REDIRECT_URL = 'accounts/login/'
+LOGIN_REDIRECT_URL = '/'
+ACCOUNT_LOGOUT_REDIRECT_URL = '/'
 
 SOCIALACCOUNT_AUTO_SIGNUP = True
 SOCIALACCOUNT_QUERY_EMAIL=ACCOUNT_EMAIL_REQUIRED

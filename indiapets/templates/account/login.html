@@ -6,12 +6,16 @@
 {% load i18n %}
 {% load account socialaccount %}
 
-{% block head_title %}{% trans "Sign In" %}{% endblock %}
+{% block head_title %}
+<title>
+  Login
+</title>
+{% endblock %}
 
-{% block content %}
+{% block body %}
 <link rel="stylesheet" href="{% static  'css/style.css' %}">
 <br><br><br><br>
-<div class="container bg-dark">
+<div class="container">
   <div class="row">
     <div class="col-sm-9 col-md-6 col-lg-4 mx-auto">
       <div class="card card-signin my-5">

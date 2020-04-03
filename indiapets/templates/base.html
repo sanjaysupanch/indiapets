@@ -1,68 +1,59 @@
 {% load static %}
-<!doctype html>
-<html lang="en">
+<!DOCTYPE html>
+<html>
 
 <head>
-   <!-- Required meta tags -->
+   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
+   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+   <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
+
+   <meta name="viewport" content="width=device-width, initial-scale=1">
+   <meta http-equiv="x-ua-compatible" content="ie=edge">
    <meta charset="utf-8">
-   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
-   <!-- Bootstrap CSS -->
+   {% block head %}
+   <title>India Pets </title>
+   {% endblock %}
 
-   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
-      integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
-   <meta http-equiv="X-UA-Compatible" content="ie=edge">
-   <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.13/css/all.css"
-      integrity="sha384-DNOHZ68U8hZfKXOrtjWvjxusGo9WQnrNx2sqG0tfsghAvtVlRW3tvkXWZh58N9jp" crossorigin="anonymous">
-   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/ekko-lightbox/5.3.0/ekko-lightbox.css" />
-   <link rel="stylesheet" href="{% static  'css/main.css' %}">
-   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-   <meta charset="UTF-8">
-   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-   <meta http-equiv="X-UA-Compatible" content="ie=edge">
-   <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.13/css/all.css"
-      integrity="sha384-DNOHZ68U8hZfKXOrtjWvjxusGo9WQnrNx2sqG0tfsghAvtVlRW3tvkXWZh58N9jp" crossorigin="anonymous">
-   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css"
-      integrity="sha384-WskhaSGFgHYWDcbwN70/dfYBj47jz9qbsMId/iRN3ewGhXQFZCSftd1LZCfmhktB" crossorigin="anonymous">
-   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.9.0/slick.css" />
-   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.9.0/slick-theme.css" />
+   <style>
+      html {scroll-behavior: smooth;}
+   </style>
 
-
-   <title>Authentication System</title>
 </head>
 
-<body class="bg-dark">
+<body>
+   <nav class="navbar navbar-expand-md  navbar-dark bg-dark fixed-top" style="background-color:#f5f5f5">
+      <div class="navbar-header">
+         <a class="navbar-brand" style="font-family:'Roboto-Bold-eot'" href="/">&nbsp;India Pets </a>
+      </div>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
+         <span class="navbar-toggler-icon"></span>
+      </button>
+     
+      <div class="collapse navbar-collapse" id="collapsibleNavbar" style="font-family:'Roboto-Bold-eot'">
+         {% if user.is_authenticated %}
 
+         <ul class="navbar-nav  ml-auto">
+            <li><a class="nav-link" href="/">Home </a></li>
+            <li><a class="nav-link" href="/accounts/email/">Profile </a></li>
+            <li><a class="nav-link" href='/accounts/logout/'>Logout</a></li>
 
-   {% block body %}{% endblock %}
-   {% block register %}{% endblock %}
-   {% block content %}{% endblock %}
-   {% block home %}{% endblock %}
-   {% block password_reset %}{% endblock %}
-   {% block password_reset_email_check %}{% endblock %}
-   {% block password_enter_for_reset %}{% endblock %}
-   {% block password_enter_for_reset_done %}{% endblock %}
-   {% block confirm_email %}{% endblock %}
+         </ul>
+         {% else %}
+         <ul class="navbar-nav ml-auto">
+            <li><a class="nav-link" href="/">Home </a></li>
 
+            <li><a class="nav-link" href="/accounts/signup/">Register </a></li>
+            <li><a class="nav-link" href='/accounts/login/'>Login </a></li>
+         </ul>
+         {% endif %}
+      </div>
+   </nav><br><br>
+   {% block body %}
+   This is base for you
+   {% endblock %}
 
-
-
-
-   <!-- Optional JavaScript -->
-   <!-- jQuery first, then Popper.js, then Bootstrap JS -->
-   <!-- <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script> -->
-   <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
-   <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
-      integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
-      crossorigin="anonymous"></script>
-   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
-      integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
-      crossorigin="anonymous"></script>
-
-   <script>
-
-
-   </script>
 </body>
 
 </html>
