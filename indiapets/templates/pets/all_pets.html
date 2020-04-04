@@ -1,0 +1,99 @@
+{% extends "base.html" %}
+{% load static %}
+{% load mytag %}
+{% load extra %}
+{% block head %}
+
+<style>
+
+         a:hover {
+         background: #263238;
+         }
+
+         .one_quarter
+         {
+         display:inline-block;
+         float:left;
+         margin:0 0 0 ;
+         list-style:none;
+         }
+
+         .first{
+         margin-left-0;
+         clear:left;
+         }
+         .one_quarter{
+         width:22.699386;
+         }
+
+         .nospace{
+         margin:0;
+         padding:25;
+         list-style:none;
+         display:block;
+         }
+
+      </style>
+{% endblock %}
+
+{% block body %}
+
+      <ul class="nospace" style="margin-left:15px;margin-top:70px">
+
+         {% for pet in pet_s %}
+         {% if forloop.counter|modulo:3 == 1 %}
+         <li class="one_quarter first">
+            <form action=""  method="post">
+               {% csrf_token %}
+               <div class="card sm-6 " style="width: 18rem;margin:50px;">
+                  <img class="card-img-top" src="{% static 'images/'|add:pet.animal_name|add:'.jpeg' %}" alt="Card image cap" width="50" height="250">
+                  <div class="card-body">
+                     <a href="{% url "pets:all-breed" pet.animal_id %}" class="btn btn-primary" style="background-color:#424242">{{pet.animal_name}}</a>
+                  </div>
+               </div>
+            </form>
+         </li>
+         {% else %}
+         <li class="one_quarter">
+            <form action=""  method="post">
+               {% csrf_token %}
+               <div class="card sm-6  " style="width: 18rem;margin:50px">
+                  <img class="card-img-top" src="{% static 'images/'|add:pet.animal_name|add:'.jpeg' %}" alt="Card image cap" width="50" height="250">
+                  <div class="card-body">
+                     <a href="{% url "pets:all-breed" pet.animal_id %}" class="btn btn-primary" style="background-color:#424242">{{pet.animal_name}}</a>
+                  </div>
+               </div>
+            </form>
+         </li>
+         {% endif %}
+         {% endfor %}
+      </ul>
+
+
+      <!-- Optional JavaScript -->
+      <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+      <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+      <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
+      <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+      <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+
+      <script>
+         $(document).ready(function() {
+          // executes when HTML-Document is loaded and DOM is ready
+
+           $( ".card" ).hover(
+           function() {
+             $(this).addClass('shadow-lg').css('cursor', 'pointer');
+           }, function() {
+             $(this).removeClass('shadow-lg');
+           }
+         );
+
+         // document ready
+         });
+
+      </script>
+
+      {% endblock %}

@@ -37,9 +37,15 @@ INSTALLED_APPS = [
     'crispy_forms',
     'widget_tweaks',
     'snowpenguin.django.recaptcha2',
+<<<<<<< HEAD
     'seller',
     
     
+=======
+    'pets'
+
+
+>>>>>>> fa1c1fd4ab368acf30f9c40b864afbd0f5480899
 ]
 
 MIDDLEWARE = [
@@ -132,8 +138,12 @@ USE_TZ = True
 # STATICFILES_DIRS = [
 #     STATIC_DIR,
 # ]
+STATICFILES_DIRS = [
+    os.path.join(BASE_DIR, "static"),
+]
+
 STATIC_URL = '/static/'
-STATIC_ROOT = os.path.join(BASE_DIR, 'static/')
+#STATIC_ROOT = os.path.join(BASE_DIR, 'static/')
 
 MEDIA_URL='/media/'
 MEDIA_ROOT = os.path.join(BASE_DIR,'media')
