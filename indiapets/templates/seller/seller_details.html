@@ -1,0 +1,19 @@
+{% extends "base.html" %}
+{% load crispy_forms_tags %}
+{% load static %}
+
+{% block body %}
+<br><br>
+{% for i in seller_data %}
+        
+        <img src="/media/{{i.pet_image}}" alt="a" style="width: 180px;height: 180px;"><br>
+        {{i.pet_name}}
+        {{i.pet_breed}}
+        {{i.pet_age}}
+        {{i.pet_gender}}
+        {{i.pet_price}}
+        {{i.pet_description}}
+
+{% endfor %}
+
+{% endblock %}

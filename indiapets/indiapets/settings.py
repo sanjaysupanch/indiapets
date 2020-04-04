@@ -37,6 +37,7 @@ INSTALLED_APPS = [
     'crispy_forms',
     'widget_tweaks',
     'snowpenguin.django.recaptcha2',
+    'seller',
     
     
 ]
@@ -126,7 +127,6 @@ USE_TZ = True
 
 
 
-MEDIA_URL='/media/'
 
 
 # STATICFILES_DIRS = [
@@ -134,6 +134,9 @@ MEDIA_URL='/media/'
 # ]
 STATIC_URL = '/static/'
 STATIC_ROOT = os.path.join(BASE_DIR, 'static/')
+
+MEDIA_URL='/media/'
+MEDIA_ROOT = os.path.join(BASE_DIR,'media')
 
 SOCIALACCOUNT_PROVIDERS = {
     'facebook': {
@@ -186,7 +189,7 @@ ACCOUNT_UNIQUE_EMAIL = True
 ACCOUNT_EMAIL_CONFIRMATION_EXPIRE_DAYS =1
 ACCOUNT_EMAIL_VERIFICATION = "mandatory"
 ACCOUNT_LOGOUT_ON_GET =True
-LOGIN_REDIRECT_URL = '/'
+LOGIN_REDIRECT_URL = '/accounts/profile/'
 ACCOUNT_LOGOUT_REDIRECT_URL = '/'
 
 SOCIALACCOUNT_AUTO_SIGNUP = True

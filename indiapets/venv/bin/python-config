@@ -1,4 +1,4 @@
-#!/home/san/indiapets/venv/bin/python
+#!/home/san/indiapets/indiapets/venv/bin/python
 
 import sys
 import getopt
