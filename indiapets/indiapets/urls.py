@@ -5,7 +5,7 @@ from accounts import views
 from django.conf.urls import url,include
 from django.conf import settings
 from django.conf.urls.static import static
-
+from feedback import views as feedback_views
 
 urlpatterns = [
     path('admin/', admin.site.urls),
@@ -13,5 +13,5 @@ urlpatterns = [
     path('accounts/', include('allauth.urls')),
     path('', views.index),
     path('pets/',include('pets.urls')),
-
+    path('feedback/', feedback_views.feedback),
 ]
