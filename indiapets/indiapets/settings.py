@@ -37,8 +37,9 @@ INSTALLED_APPS = [
     'crispy_forms',
     'widget_tweaks',
     'snowpenguin.django.recaptcha2',
-    
-    
+    'pets'
+
+
 ]
 
 MIDDLEWARE = [
@@ -132,8 +133,12 @@ MEDIA_URL='/media/'
 # STATICFILES_DIRS = [
 #     STATIC_DIR,
 # ]
+STATICFILES_DIRS = [
+    os.path.join(BASE_DIR, "static"),
+]
+
 STATIC_URL = '/static/'
-STATIC_ROOT = os.path.join(BASE_DIR, 'static/')
+#STATIC_ROOT = os.path.join(BASE_DIR, 'static/')
 
 SOCIALACCOUNT_PROVIDERS = {
     'facebook': {

@@ -1,0 +1,55 @@
+{% extends "base.html" %}
+{% load static %}
+{% load mytag %}
+{% load extra %}
+{% load widget_tweaks %}
+
+{% block head %}
+    <style>
+      a:hover {
+        background: #263238;
+
+      }
+
+      .table-container{
+      -webkit-box-shadow: 1px 5px 15px 9px rgba(0,0,0,0.75);
+      -moz-box-shadow: 1px 5px 15px 9px rgba(0,0,0,0.75);
+      box-shadow: 1px 5px 15px 9px rgba(0,0,0,0.75);
+      width:375px;
+      height:740px;
+      margin-left: -30px;
+      margin-top:20px;
+      }
+
+
+    </style>
+  {% endblock %}
+
+  {% block body %}
+
+
+  <div style="margin-top:60px">
+          {% if breed %}
+          <div class="container-fluid h-100 text-dark " style="margin-top:50px">
+                  <div class="row justify-content-center align-items-center h-100 ">
+                          <div class="col col-sm-6 col-md-6 col-lg-4 col-xl-3 ">
+          {# <div class="table-container"> #}
+          {# <div style="font-size:40px;" class="bg-primary text-white pl-3">Breed Info</div> #}
+
+
+           <img class="card-img-top" src="{% static 'images/'|add:breed.breed_name|add:'.jpeg' %}" alt="Card image cap" width="50" height="200"
+           <ul style="margin-left: -30px">
+                            <li style="margin-top:30px">Breed Name:{{breed.breed_name}}</li>
+                            <li>Lifespan:{{breed.lifespan}}</li>
+                            <li>Gestation period:{{ breed.gestation_period}}</li>
+                            <li>Average height:{{breed.average_height}}</li>
+                            <li>Daily sleep:{{ breed.daily_sleep}}</li>
+                            <li>Diet:{{ breed.diet_chart}}</li>
+            </ul>
+
+</div>
+  </div>
+
+{% endif %}
+
+{% endblock %}
