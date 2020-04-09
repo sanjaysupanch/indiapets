@@ -1,21 +1,154 @@
-{% extends "base.html" %}
-{% load crispy_forms_tags %}
-{% load static %}
+<!DOCTYPE html>
+<html>
 
-{% block body %}
-<br><br>
-<center>
-    <div class="container border border-info w-50"><br>
-        <h1>User Profile Form</h1>
-        <br>
-        <form method="POST" >
-            {% csrf_token %}
-            {{form|crispy}}
+<head>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
+    <!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script> -->
+
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <meta charset="utf-8">
+
+
+    <title>India Pets </title>
+
+
+    <style>
+        html {
+            scroll-behavior: smooth;
+        }
+
+        .dropdown-content a:hover {
+            background-color: #ddd;
+        }
+
+        .dropdown:hover .dropdown-content {
+            display: block;
+        }
+
+        .dropdown {
+            position: relative;
+            display: inline-block;
+        }
+
+        .dropdown-content {
+            display: none;
+            position: absolute;
+            background-color: #f1f1f1;
+            min-width: 160px;
+            box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+            z-index: 1;
+        }
+
+        .dropdown-content a {
+            color: black;
+            padding: 12px 16px;
+            text-decoration: none;
+            display: block;
+        }
+    </style>
+
+</head>
+
+<body>
+    <nav class="navbar navbar-expand-md  navbar-dark bg-dark fixed-top" style="background-color:#f5f5f5">
+        <div class="navbar-header">
+            <a class="navbar-brand" style="font-family:'Roboto-Bold-eot'" href="/accounts/profile/">&nbsp;India Pets </a>
+        </div>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="collapsibleNavbar" style="font-family:'Roboto-Bold-eot'">
+
+
+            <ul class="navbar-nav  ml-auto">
+                <li><a class="nav-link" href="/accounts/profile/">Home </a></li>
+                <!-- <li><a class="nav-link" href="/seller/pets_sell/">Sell </a></li> -->
+                <li>
+
+                    <!-- <div class="dropdown">
+                        <a class="dropbtn nav-link">Sell </a>
+                        <div class="dropdown-content">
+                            <a href="/seller/pets_sell/">Sell Pets</a>
+                            <a href="/seller/seller-data/">Seller Profile</a>
+                        </div>
+                    </div> -->
+
+                </li>
+
+
+                <li><a class="nav-link" href='/accounts/logout/'>Logout</a></li>
+
+            </ul>
+
+        </div>
+    </nav><br><br>
+
+    <br><br>
+    <center>
+        <div class="container border border-info w-50"><br>
+            <h1>User Profile Form</h1>
             <br>
-            <button type="submit" class="btn btn-info w-25">Submit</button>
-        </form>
-        
-        <br>
-    </div>
-</center>
-{% endblock %}
+            <form method="POST">
+                    {% csrf_token %}
+
+                <div id="div_id_state" class="control-group"> <label for="id_state" class="control-label ">
+                        State
+                    </label>
+                    <div class="controls"> <input type="text" name="state" maxlength="50" class="textinput textInput"
+                            id="id_state"> </div>
+                </div>
+                <div id="div_id_district" class="control-group"> <label for="id_district"
+                        class="control-label requiredField">
+                        District<span class="asteriskField">*</span> </label>
+                    <div class="controls"> <input type="text" name="district" maxlength="40" class="textinput textInput"
+                            required id="id_district"> </div>
+                </div>
+                <div id="div_id_pin" class="control-group"> <label for="id_pin" class="control-label requiredField">
+                        Pin<span class="asteriskField">*</span> </label>
+                    <div class="controls"> <input type="number" name="pin" class="numberinput" required id="id_pin">
+                    </div>
+                </div>
+                <div id="div_id_street_name" class="control-group"> <label for="id_street_name"
+                        class="control-label requiredField">
+                        Street name<span class="asteriskField">*</span> </label>
+                    <div class="controls"> <input type="text" name="street_name" maxlength="120"
+                            class="textinput textInput" required id="id_street_name"> </div>
+                </div>
+                <div id="div_id_house_number" class="control-group"> <label for="id_house_number"
+                        class="control-label requiredField">
+                        House number<span class="asteriskField">*</span> </label>
+                    <div class="controls"> <input type="text" name="house_number" maxlength="10"
+                            class="textinput textInput" required id="id_house_number"> </div>
+                </div>
+                <div id="div_id_contact_no" class="control-group"> <label for="id_contact_no"
+                        class="control-label requiredField">
+                        Contact no<span class="asteriskField">*</span> </label>
+                    <div class="controls"> <input type="number" name="contact_no" min="-9223372036854775808"
+                            max="9223372036854775807" class="numberinput" required id="id_contact_no"> </div>
+                </div>
+
+                <br>
+                <button type="submit" class="btn btn-info w-25">Submit</button>
+            </form>
+
+            <br>
+        </div>
+    </center>
+
+
+</body>
+
+</html>
+
+
+
+
+
+
+
+

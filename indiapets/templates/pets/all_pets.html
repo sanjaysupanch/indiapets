@@ -46,7 +46,7 @@
             <form action=""  method="post">
                {% csrf_token %}
                <div class="card sm-6 " style="width: 18rem;margin:50px;">
-                  <img class="card-img-top" src="{% static 'images/'|add:pet.animal_name|add:'.jpeg' %}" alt="Card image cap" width="50" height="250">
+                  <img class="card-img-top" src="{% static '/pets/images/'|add:pet.animal_name|add:'.jpeg' %}" alt="Card image cap" width="50" height="250">
                   <div class="card-body">
                      <a href="{% url "pets:all-breed" pet.animal_id %}" class="btn btn-primary" style="background-color:#424242">{{pet.animal_name}}</a>
                   </div>
@@ -58,7 +58,7 @@
             <form action=""  method="post">
                {% csrf_token %}
                <div class="card sm-6  " style="width: 18rem;margin:50px">
-                  <img class="card-img-top" src="{% static 'images/'|add:pet.animal_name|add:'.jpeg' %}" alt="Card image cap" width="50" height="250">
+                  <img class="card-img-top" src="{% static '/pets/images/'|add:pet.animal_name|add:'.jpeg' %}" alt="Card image cap" width="50" height="250">
                   <div class="card-body">
                      <a href="{% url "pets:all-breed" pet.animal_id %}" class="btn btn-primary" style="background-color:#424242">{{pet.animal_name}}</a>
                   </div>

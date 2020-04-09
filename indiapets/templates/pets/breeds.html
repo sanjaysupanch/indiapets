@@ -49,7 +49,7 @@
            <form action=""  method="post">
           {% csrf_token %}
           <div class="card sm-6 " style="width: 18rem;margin:50px;">
-             <img class="card-img-top" src="{% static 'images/'|add:breed.breed_name|add:'.jpeg' %}" alt="Card image cap" width="50" height="250">
+             <img class="card-img-top" src="{% static '/pets/images/'|add:breed.breed_name|add:'.jpeg' %}" alt="Card image cap" width="50" height="250">
 
              <div class="card-body">
                 <ul class="list" style="margin-left: -30px">
@@ -64,7 +64,7 @@
           <form action=""  method="post">
              {% csrf_token %}
              <div class="card sm-6  " style="width: 18rem;margin:50px">
-               <img class="card-img-top" src="{% static 'images/'|add:breed.breed_name|add:'.jpeg' %}" alt="Card image cap" width="50" height="250">
+               <img class="card-img-top" src="{% static '/pets/images/'|add:breed.breed_name|add:'.jpeg' %}" alt="Card image cap" width="50" height="250">
 
                 <div class="card-body">
                    <ul style="margin-left: -30px">
