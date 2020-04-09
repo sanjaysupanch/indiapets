@@ -16,7 +16,7 @@ def Pets_details(request):
             post=form.save(commit=False)
             post.user=request.user
             post.save()
-            return redirect('/sell/seller-data/')
+            return redirect('/seller/seller-data/')
         else:
             return HttpResponse("Form is invalid")
     else:
