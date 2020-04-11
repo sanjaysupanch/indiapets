@@ -1,4 +1,5 @@
 from django import forms
+from django.forms import ModelForm
 from django.contrib.auth.forms import UserCreationForm, UserChangeForm
 from django.contrib.auth.models import User
 from .models import *
@@ -39,3 +40,9 @@ class AllauthSignupForm(forms.Form):
         user.last_name = self.cleaned_data['last_name']
         user.save()
         return user
+
+class AddressForm(forms.ModelForm):
+    
+    class Meta:
+        model=Address
+        fields=[ 'state', 'district', 'pin', 'street_name', 'house_number', 'contact_no']

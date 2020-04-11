@@ -1,0 +1,147 @@
+{% extends "base.html" %}
+{% load crispy_forms_tags %}
+{% load static %}
+
+{% block head %}
+<style>
+    
+</style>
+{% endblock %}
+
+{% block body %}
+<br><br>
+<center>
+    <div class="container border border-info w-50"><br>
+        <h1>Animal Description Form</h1>
+        <hr>
+        <br>
+        <form method="POST" enctype="multipart/form-data">
+            {% csrf_token %}
+
+            <div id="div_id_pet_name" class="control-group ">
+                <label for="id_pet_name" class="control-label requiredField">
+                    Pet name<span class="asteriskField">*</span>
+                </label>
+                <div class="controls ">
+                    <select name="pet_name" class="select w-50 bg-light" required id="id_pet_name">
+                        <option value="">---------</option>
+                        <option value="Dog">Dog</option>
+                        <option value="Cat">Cat</option>
+                        <option value="Buffalo">Buffalo</option>
+                        <option value="Rabbit">Rabbit</option>
+                    </select>
+                </div>
+            </div>
+            <div id="div_id_pet_breed" class="control-group">
+                <label for="id_pet_breed" class="control-label requiredField">
+                    Pet breed<span class="asteriskField">*</span>
+                </label>
+                <div class="controls">
+                    <select name="pet_breed" class="select w-50 bg-light" required id="id_pet_breed">
+                        <option value="" >---------</option>
+                    </select>
+                </div>
+            </div>
+            <div id="div_id_pet_image" class="control-group">
+                <label for="id_pet_image" class="control-label requiredField">
+                    Pet image<span class="asteriskField">*</span>
+                </label>
+                <div class="controls">
+                    <input type="file" name="pet_image" accept="image/*"
+                        class="clearablefileinput w-50 bg-ligh text-danger" required id="id_pet_image">
+                </div>
+            </div>
+            <div id="div_id_pet_age" class="control-group">
+                <label for="id_pet_age" class="control-label requiredField">
+                    Pet age<span class="asteriskField">*</span>
+                </label>
+                <div class="controls">
+                    <input type="text" name="pet_age" maxlength="20" class="textinput textInput w-50 " required
+                        id="id_pet_age">
+                </div>
+            </div>
+            <div id="div_id_pet_gender" class="control-group">
+                <label for="id_pet_gender" class="control-label requiredField">
+                    Pet gender<span class="asteriskField">*</span>
+                </label>
+                <div class="controls">
+                    <select name="pet_gender" class="select w-50 bg-light" required id="id_pet_gender">
+                        <!-- <option value="" selected>---------</option> -->
+                        <option value="MALE">MALE</option>
+                        <option value="FEMALE">FEMALE</option>
+                    </select>
+                </div>
+            </div>
+            <div id="div_id_pet_price" class="control-group">
+                <label for="id_pet_price" class="control-label requiredField">
+                    Pet price<span class="asteriskField">*</span>
+                </label>
+                <div class="controls">
+                    <input type="number" name="pet_price" class="numberinput w-50" required id="id_pet_price">
+                </div>
+            </div>
+            <div id="div_id_pet_description" class="control-group">
+                <label for="id_pet_description" class="control-label requiredField">
+                    Pet description<span class="asteriskField">*</span>
+                </label>
+                <div class="controls">
+                    <textarea name="pet_description" cols="36" rows="5" maxlength="200" class="textarea" required
+                        id="id_pet_description">
+
+                    </textarea>
+                </div>
+            </div>
+
+            <br>
+            <button type="submit" class="btn btn-info w-50">Submit</button>
+        </form>
+        <br>
+    </div><br><br><br><br>
+</center>
+<script>
+    $(document).ready(function () {
+    $("#id_pet_name").change(function () {
+        var val = $(this).val();
+        if (val == "Dog") {
+            $("#id_pet_breed").html("<option value='German Shepherd'>German Shepherd</option><option value='Labrador'>Labrador</option><option value='Alaskan'>Alaskan</option><option value='India Spitz'>India Spitz</option>");
+        } 
+        else if (val == "Cat") {
+            $("#id_pet_breed").html("<option value='Persian Cat'>Persian Cat</option><option value='Bengal Cat'>Bengal Cat</option><option value='Maine Coon'>Maine Coon</option><option value='Rag Doll'>Rag Doll</option>");
+        }
+        else if (val == "Buffalo") {
+            $("#id_pet_breed").html("<option value='Murrah Buffalo'>Murrah Buffalo</option><option value='Surti Buffalo'>Surti Buffalo</option><option value='Carabao'>Carabao</option><option value='Banni Buffalo'>Banni Buffalo</option>");
+        } 
+        else if (val == "Rabbit") {
+            $("#id_pet_breed").html("<option value='Angora Rabbit'>Angora Rabbit</option><option value='Mini Rex'>Mini Rex</option><option value='Mini Lop'>Mini Lop</option><option value='Jersey Wooly'>Jersey Wooly</option>");
+        }
+    });
+});
+</script>
+
+{% endblock %}
+
+
+
+
+
+
+
+
+
+{% block body1 %}
+<br><br>
+<center>
+    <div class="container border border-info w-50"><br>
+        <h1>Animal Description Form</h1>
+        <br>
+        <form method="POST" enctype="multipart/form-data">
+            {% csrf_token %}
+            {{form|crispy}}
+            <br>
+            <button type="submit" class="btn btn-info w-25">Submit</button>
+        </form>
+
+        <br>
+    </div>
+</center>
+{% endblock %}
