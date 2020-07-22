@@ -21,3 +21,11 @@ def breed_info(request,pk):
     #print(breed.breed_name)
     context={'breed':breed}
     return render(request,'pets/breed_info.html',context)
+
+
+
+
+#landing_page<====
+
+def landing(request):
+    return render(request, 'pets/landing_page.html', {})
