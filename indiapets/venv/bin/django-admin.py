@@ -1,4 +1,4 @@
-#!/home/san/indiapets/venv/bin/python3
+#!/home/san/indiapets/indiapets/venv/bin/python3
 from django.core import management
 
 if __name__ == "__main__":

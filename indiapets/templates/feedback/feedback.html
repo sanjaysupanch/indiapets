@@ -1,0 +1,104 @@
+{% extends "base.html" %}
+{% load static %}
+{% block body %}
+    <head>
+        <style>
+            .Options{
+                /* display: none; */
+                list-style: none;
+                background-color:rgba(7, 79, 100,0.5);
+                width: 20vw;
+                height: 6vw;
+                padding-top: 1%;
+                font-weight: 300;
+                overflow-y: scroll;
+                scroll-behavior: smooth;
+            }
+            form{
+                background-color: rgba(33, 133, 158, 0.493);
+                width: 40vw;
+                height: 35vw;
+                /* height: 100%; */
+                margin-left: 10%;
+                padding-left: 1%;
+                padding-top: 2%;
+                display: block;
+                border-radius: 2% 2% 2% 2%;
+                /* font-size: 1vw; */
+            }
+            input[type='email']{
+                width:90%;
+                height: 10%;
+                border:ghostwhite;
+                border-radius: 1% 1% 1% 1%;
+                margin-bottom: 3%;
+            }
+            form input[type='submit']{
+                border: ghostwhite;
+                /* border-radius: 2% 2% 2% 2%; */
+                width: 7vw;
+                height: 2vw;
+                background-color: rgb(255, 255, 255);
+                color:rgb(6, 99, 87) ;
+                font-weight: 700;
+                margin-top: 1%;
+            }
+            form input[type='text']{
+                width:90%;
+                height:50%;
+                border: none;
+                text-align: top;
+                overflow-y:scroll;
+                overflow-x:hidden;
+                margin-top: 1%;
+                margin-bottom: 1%;
+                border:ghostwhite;
+                padding-top: 0%;
+                border-radius: 2% 2% 2% 2%;
+            }
+            form input[type='checkbox']{
+                border: none;
+            }
+            li{
+                display: block;
+                font-size: 1vw;
+            }
+            
+        </style>
+        
+    </head>
+    <div style="width: 70vw;margin-left: 15%;margin-top: 10%;color: rgb(255, 255, 255);display: flex;">
+        <div>
+            <h1 style="color:rgba(6, 99, 87, 0.836) ;">More about us</h1>
+            <div style="color: gray;width: 30vw;">
+                Sit et legLorem ipsum dolor sit amet, est ei error insolens ullamcorper, ut erant aliquip quaerendum sed. Errem phaedrum id vix. Ea cibo nullam fuisset eam.ere alienum omittam, pri utinam nonumy at, malis tollit habemus est ad. Ea cibo nullam fuisset eam.
+            </div>
+        </div>
+        <form>
+            <!-- <input type="text" value='   VineelRaj'readonly='readonly' style="border: none;"> -->
+            <!-- <div></div> -->
+            <div style='cursor:pointer;width: 5vw;background-color: rgb(7, 79, 100);text-align: center;'>options</div>
+            <ul class ='Options'>
+                <li>Click on the checkbox</li>
+                <li><input type='checkbox'/>Regarding Pets</li>
+                <li><input type='checkbox'/>Regarding Doctors</li>
+                <li><input type='checkbox'/>Regarding Information</li>
+            </ul>
+            <input type="email" placeholder="    e.g., someone@gmail.com">
+            <input type='text' placeholder="    Give Your Feedback" required='required'/>
+            <input type="submit" value="Submit"/> 
+        </form>
+    </div>
+    <script>
+        function Expand(){
+            Option = document.getElementsByClassName('Options')[0]
+            if (Option.style.display == ''){
+                Option.style.display = 'block'
+                // console.log('111111111')
+            }
+            else{
+                Option.style.display = ''
+            }
+        }   
+    </script>
+{% endblock %}
