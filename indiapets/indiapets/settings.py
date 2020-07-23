@@ -182,7 +182,7 @@ EMAIL_USE_TLS = True
 EMAIL_HOST = 'smtp.gmail.com'
 EMAIL_PORT = 587
 EMAIL_HOST_USER = 'pioneer.deo@gmail.com'
-EMAIL_HOST_PASSWORD = 'tommyjerry'
+EMAIL_HOST_PASSWORD = 'tommyjerry99'
 
 SITE_ID = 1
 ACCOUNT_EMAIL_REQUIRED = True
