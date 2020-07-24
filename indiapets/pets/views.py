@@ -5,8 +5,8 @@ from . models import *
 # Create your views here.
 def all_pets(request):
     pet_s=Animal.objects.all()
-    for i in pet_s:
-        print(i.animal_name)
+    # for i in pet_s:
+        # print(i.animal_name)
     context={'pet_s':pet_s}
     return render(request, 'pets/all_pets.html',context)
 

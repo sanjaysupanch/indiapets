@@ -130,9 +130,7 @@ USE_TZ = True
 
 
 
-# STATICFILES_DIRS = [
-#     STATIC_DIR,
-# ]
+#STATICFILES_DIRS = [STATIC_DIR]
 # STATICFILES_DIRS = [
 #     os.path.join(BASE_DIR, "static"),
 # ]

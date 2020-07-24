@@ -1,8 +1,8 @@
 {% extends "base.html" %}
 {% load static %}
+
 {% block body %}
 <br><br><br><br><br>
-dddsssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssss
 <div id="slider" style="width:1200px;height:800px;margin:0 auto;margin-bottom: 0px;">
     <!-- Slide 2 -->
     <div class="ls-slide"
@@ -460,13 +460,17 @@ dddsssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssss
         <div class="dogscats col-lg-3 col-sm-6 col-md-6">
             <div class="isotope-item">
                 <div class="gallery-thumb">
-                    <img class="img-fluid" src="{% static 'pets/img/gallery/gallery1.jpg' %}" alt="">
-                    <a href="img/gallery/gallery1.jpg" title="You can add caption to pictures.">
-                        <span class="overlay-mask"></span>
-                    </a>
+
+                <a href="{% url "pets:all-breed" 1 %}" title="You can add caption to pictures.">
+                    <img class="img-fluid" src="{% static 'pets/img/gallery/gallery1.jpg' %}">
+                
+
+                    {% comment %} <span class="overlay-mask"></span> {% endcomment %}
+                </a>
                 </div>
             </div>
         </div>
+
         <!-- Image 2 -->
         <div class="other col-lg-3 col-sm-6 col-md-6">
             <div class="isotope-item">
