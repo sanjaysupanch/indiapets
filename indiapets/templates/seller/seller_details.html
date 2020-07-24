@@ -46,8 +46,8 @@
 </style>
 {% endblock %}
 {% block body %}
-<br><br>
-<h1 class="text-center">Welcome to India Pets! India’s First Online Pet and Farming Animals, Birds Store
+<br><br><br><br><br>
+<h4 class="text-center">Welcome to India Pets! India’s First Online Pet and Farming Animals, Birds Store
         <hr>
 </h1>
 <br><br>
@@ -61,7 +61,7 @@
                         <div class="flip-card">
                                 <div class="flip-card-inner">
                                         <div class="flip-card-front">
-                                                <img src="/media/{{i.pet_image}}" alt="Avatar"
+                                                <img src="{{i.pet_image.url}}" alt="Avatar"
                                                         style="width:300px;height:300px;">
 
                                                 <h4>{{i.pet_breed}}</h4>

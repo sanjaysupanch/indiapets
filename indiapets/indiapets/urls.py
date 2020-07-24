@@ -18,3 +18,7 @@ urlpatterns = [
     path('feedback/', feedback_views.feedback),
     path('Doctor/', doctor_views.index),
 ]
+
+urlpatterns += static(settings.STATIC_URL,document_root=settings.STATIC_ROOT)
+urlpatterns += static(settings.MEDIA_URL,document_root=settings.MEDIA_ROOT)
+

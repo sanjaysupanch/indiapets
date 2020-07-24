@@ -16,5 +16,5 @@ class seller(models.Model):
     pet_description=models.TextField(max_length=200)
     is_sold = models.BooleanField(default=False)
     is_verified = models.BooleanField(default=False)
-    doctor_reg_no = models.CharField(max_length=120, null=True)
-    doctor_name = models.CharField(max_length=120, null=True)
+    doctor_reg_no = models.CharField(max_length=120, null=True, blank=True)
+    doctor_name = models.CharField(max_length=120, null=True, blank=True)

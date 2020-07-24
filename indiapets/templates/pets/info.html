@@ -1,0 +1,110 @@
+{% extends "base.html" %}
+{% load crispy_forms_tags %}
+{% load static %}
+
+{% block body %}
+
+<div class="jumbotron jumbotron-fluid overlay">
+    <div class="jumbo-heading">
+        <div class="section-heading" data-aos="zoom-in">
+            <h1>Buy a Pet</h1>
+        </div>
+    </div>
+</div>
+
+<!-- ==== Page Content ==== -->
+<div class="page">
+    <div class="container">
+        <div class="row">
+            {% for i,j in breed %}
+            <div class="col-lg-12">
+                <div class="row bg-light-custom border-irregular1 block-padding">
+                    <!-- image -->
+                    <div class="col-lg-4 offset-lg-2">
+                        <!-- owl slider -->
+                        <div id="owl-adopt-single" class="owl-carousel top-centered-nav owl-theme">
+                            <div class="col-md-12">
+                                <!-- image -->
+                                <a href="#" title="your caption here">
+                                    <img src="{{i.pet_image.url}}"
+                                        class="border-irregular1 img-fluid hover-opacity" alt="">
+                                </a>
+                            </div>
+                            <!-- /col-md-12 -->
+                            <div class="col-md-12">
+                                <!-- image -->
+                                <a href="#" title="your caption here">
+                                    <img src="{{i.pet_image.url}}"
+                                        class="border-irregular2 img-fluid hover-opacity" alt="">
+                                </a>
+                            </div>
+                            <!-- /col-md-12 -->
+                            <div class="col-md-12">
+                                <!-- image -->
+                                <a href="#" title="your caption here">
+                                    <img src="{{i.pet_image.url}}"
+                                        class="border-irregular1 img-fluid hover-opacity" alt="">
+                                </a>
+                            </div>
+                        </div>
+                        <!-- /owl-carousel -->
+                    </div>
+                    <!-- /col-md -->
+                    <!-- adoption info  -->
+                    <div class="col-lg-4 res-margin mt-5 text-xs-center">
+                        <h4><strong>Pet name:</strong> {{i.pet_name}}</h4>
+                        <div class="row">
+                            <div class="col-sm-6">
+                                <ul class="list-unstyled pet-adopt-info">
+                                    <li class="h7">Gender: <span>{{i.pet_gender}}</span></li>
+                                    <li class="h7">Age: <span>{{i.pet_age}} years</span></li>
+                                    <li class="h7">Breed: <span>{{i.pet_breed}}</span></li>
+                                </ul>
+                            </div>
+                            <div class="col-sm-6">
+                                <ul class="list-unstyled pet-adopt-info">
+                                    <li class="h7">Price: <span>{{i.pet_price}} &#8377;</span></li>
+                                    <li class="h7">Healthy: <span>{{i.is_verified}}</span></li>
+                                    <li class="h7">Life span: <span>{{j.lifespan}} years</span></li>
+                                </ul>
+                            </div>
+                            <!-- /div-->
+                        </div>
+                        <!-- /row-->
+                        <!-- <p class="font-weight-bold">{{i.pet_description}}</p> -->
+                        <!-- button -->
+                        <a href="#" class="btn btn-primary " data-aos="zoom-in">Buy now!</a>
+                    </div>
+                    <!-- /col-md -->
+                </div>
+                <!-- /row-->
+                <div class="col-md-12 mt-5">
+                    <h3>About {{i.pet_name}}</h3>
+                    
+                    <p>{{i.pet_description}}
+                    </p>
+                    
+                    <div class="alert alert-primary mt-5" role="alert">
+                        <h6 class="text-light">Buy Rules</h6>
+                        <p>Elit uasi quidem minus id omnis a nibh fusce mollis imperdie tlorem ipuset phas ellus ac
+                            sodales Lorem ipsum dolor Phas ellus
+                            ac sodales felis tiam non metus. lorem ipsum dolor sit amet, consectetur adipisicing elit
+                            uasi quidem minus id omnis a nibh fusce mollis imperdie tlorem ipuset campas fincas
+                        </p>
+                    </div>
+                    <!-- /alert-->
+                    <!-- <p class="custom-link"><a href="adoption-2.html">« Go back to adoption gallery</a></p> -->
+                </div>
+                <!-- /col-md-->
+
+            </div>
+            {% endfor %}
+            <!-- /col-lg-->
+        </div>
+        <!-- /row-->
+    </div>
+    <!-- /container-->
+</div>
+<!-- /page -->
+
+{% endblock %}
