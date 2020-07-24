@@ -83,10 +83,21 @@ WSGI_APPLICATION = 'indiapets.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/3.0/ref/settings/#databases
 
+# DATABASES = {
+#     'default': {
+#         'ENGINE': 'django.db.backends.sqlite3',
+#         'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
+#     }
+# }
+
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
+        'ENGINE': 'django.db.backends.postgresql',
+        'NAME': 'dc2rgc41gl8vrg',
+        'USER': 'xwenkraldqzxot',
+        'PASSWORD': '8c96405698fbbec9c234e08ffe67432fe93df176a24a1ecfad5b4e826af15514',
+        'HOST': 'ec2-18-211-48-247.compute-1.amazonaws.com',
+        'PORT': '5432',
     }
 }
 

@@ -15,3 +15,4 @@ class seller(models.Model):
     pet_gender=models.CharField(max_length=10, choices=CHOICES)
     pet_price=models.IntegerField()
     pet_description=models.TextField(max_length=200)
+    is_sold = models.BooleanField(default=False)
