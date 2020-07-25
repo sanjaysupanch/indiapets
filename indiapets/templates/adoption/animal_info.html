@@ -1,0 +1,124 @@
+{% extends "base.html" %}
+{% load static %}
+{% load mytag %}
+{% load extra %}
+
+{% block body %}
+
+<div class="jumbotron jumbotron-fluid overlay" style='margin-top:-100px'>
+   <div class="jumbo-heading">
+      <!-- section-heading -->
+      <div class="section-heading" data-aos="zoom-in">
+         <h1>Adoption</h1>
+      </div>
+      <!-- /section-heading -->
+   </div>
+   <!-- /jumbo-heading -->
+</div>
+
+<br><br>
+     
+<div class="col-lg-8 offset-lg-2 text-center">
+         <h3>Find a new furry Friend</h3>
+         <p>Some of the advantages of adopting from a shelter are you might be able to see many pets for adoption all at once at their facility. Many shelters have a very easy or no screening process, and will let you take home whatever pet you want the same day. Adoption fees are often lower than a rescue’s, but you may need to pay for additional vet care after adopting.</p>
+      </div>
+
+<div class="page">
+   <div class="container">
+      <div class="row">
+        {% for animal in animal%}
+
+         <div class="col-lg-12">
+            <div class="row bg-light-custom border-irregular1 block-padding">
+			  <!-- image -->
+               <div class="col-lg-4 offset-lg-2">
+                  <!-- owl slider -->
+                  <div id="owl-adopt-single" class="owl-carousel top-centered-nav owl-theme" >
+                     <div class="col-md-12">
+                        <!-- image -->
+                        <a href="img/adoption/adoption1.jpg" title="your caption here">
+                        <img src="/media/{{animal.pet_image}}" class="border-irregular1 img-fluid hover-opacity" alt="">
+                        </a>
+                     </div>
+                     <!-- /col-md-12 -->
+                     <div class="col-md-12">
+                        <!-- image -->
+                        <a href="img/adoption/adoptionsingle1.jpg" title="your caption here">
+                        <img src="/media/{{animal.pet_image}}" class="border-irregular2 img-fluid hover-opacity" alt="">
+                        </a>
+                     </div>
+                     <!-- /col-md-12 -->
+                     <div class="col-md-12">
+                        <!-- image -->
+                        <a href="img/adoption/adoptionsingle2.jpg" title="your caption here">
+                        <img src="/media/{{animal.pet_image}}" class="border-irregular1 img-fluid hover-opacity" alt="">
+                        </a>                  
+                     </div>
+                  </div> 
+                  <!-- /owl-carousel -->	
+               </div>
+               <!-- /col-md -->	
+			 <!-- adoption info  -->
+               <div class="col-lg-6 res-margin mt-5 text-xs-center">
+                  <h4><strong>Animal:</strong> {{animal.pet_name}} </h4>
+				   <div class="row">
+					  <div class="col-sm-6">
+						  <ul class="list-unstyled pet-adopt-info">
+							 <li class="h7">Gender: <span>{{animal.pet_gender}}</span></li>
+							 <li class="h7">Age: <span>{{animal.pet_age}} years</span></li>
+							 <li class="h7">Breed: <span>{{animal.pet_breed}}</span></li>
+                             <li class="h7">Food: <span>{{animal.Food}}</span></li>
+						  </ul>
+					  </div>
+					   <div class="col-sm-6">
+						  <ul class="list-unstyled pet-adopt-info">
+							 <li class="h7">Life Span: <span>{{animal.lifespan}} years</span></li>
+							 <li class="h7">Sleep: <span>{{animal.daily_sleep}} Hours</span></li>
+							 <li class="h7">Height: <span>{{animal.average_height}} cm</span></li>
+                             <li class="h7">Document: <span> <a href="{% url "adoption:document" animal.pet_id %}">Link </a></span></li>
+                             
+						  </ul>
+				     </div>
+                  <!-- /div-->
+				 </div>
+				 <!-- /row-->
+				 <!-- button -->
+                 {% comment %} <div class="col-sm-12">
+				    <ul class="list-unstyled pet-adopt-info">
+                    <li class="h7">Food: <span>{{animal.Food}}</span></li>
+					</ul>
+				</div> {% endcomment %}
+                 {% comment %} <a href="#" class="btn btn-primary " data-aos="zoom-in" >Adopt now!</a>              {% endcomment %}
+			   </div>
+               <!-- /col-md --> 
+            </div>
+            <!-- /row-->			   
+               <div class="col-md-12 mt-5">
+			   <h3>About Animal</h3>
+                  <!-- ul custom-->
+                  <ul class="custom list-inline font-weight-bold">
+                     <li class="list-inline-item">Friendly to other</li>
+                     <li class="list-inline-item">Good for Apartments</li>
+                     <li class="list-inline-item">Friendly with Kids</li>
+                  </ul>
+                  <p>{{animal.pet_description}}</p>
+                  <div class="alert alert-primary mt-5" role="alert">
+                     <h6 class="text-light">Adoption Rules</h6>
+                     <p>Most shelters follow a specific adoption procedure involving an adoption form and submission of other certificates. The adoption form might ask questions about taking the dog to the vet, caring at home, vacation plans etc, as well as about the worst-case scenario – if you have to give up the dog some time in the future. You will also be asked to provide your original identity documents and address proof.</p>
+                  </div>
+                  <!-- /alert-->
+				   
+               </div>
+                {%endfor %}
+
+               <!-- /col-md-->
+          
+         </div>
+         <!-- /col-lg-->
+      </div>
+      <!-- /row-->
+   </div>
+   <!-- /container-->
+</div>
+
+{% endblock %}

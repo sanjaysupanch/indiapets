@@ -129,40 +129,21 @@
                <div class="collapse navbar-collapse" id="navbarResponsive">
                   <ul class="navbar-nav ml-auto">
                      <li class="nav-item">
-                        <a class="nav-link" href="index-2.html">Home
+{#                        <a class="nav-link" href="index-2.html">Home#}
+                        <a class="nav-link" href="{% url 'pets:landing' %}">Home
                         </a>
                      </li>
-                     <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle" href="#" id="services-dropdown" data-toggle="dropdown"
-                           aria-haspopup="true" aria-expanded="false">
-                           Services
+                      <li class="nav-item">
+{#                        <a class="nav-link" href="index-2.html">Home#}
+                        <a class="nav-link" href="{% url 'pets:all_pets' %}">Buy
                         </a>
-                        <div class="dropdown-menu" aria-labelledby="services-dropdown">
-                           <a class="dropdown-item" href="services.html">Services Style 1</a>
-                           <a class="dropdown-item" href="services2.html">Services Style 2</a>
-                           <a class="dropdown-item" href="services-single.html">Services Single</a>
-                        </div>
                      </li>
-                     <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle" href="#" id="about-dropdown" data-toggle="dropdown"
-                           aria-haspopup="true" aria-expanded="false">
-                           About
+                      <li class="nav-item">
+{#                        <a class="nav-link" href="index-2.html">Home#}
+                        <a class="nav-link" href="{% url 'adoption:adoption' %}">Adopt
                         </a>
-                        <div class="dropdown-menu" aria-labelledby="about-dropdown">
-                           <a class="dropdown-item" href="about.html">About Style 1</a>
-                           <a class="dropdown-item" href="about2.html">About Style 2</a>
-                        </div>
                      </li>
-                     <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle" href="#" id="adopt-dropdown" data-toggle="dropdown"
-                           aria-haspopup="true" aria-expanded="false">
-                           Buy
-                        </a>
-                        <div class="dropdown-menu" aria-labelledby="adopt-dropdown">
-                           <a class="dropdown-item" href="adoption.html">Pet Gallery</a>
-                           <!--<a class="dropdown-item" href="adoption-single.html">Adoption Single Page</a>-->
-                        </div>
-                     </li>
+
                      <!-- menu item -->
                      <li class="nav-item dropdown">
                         <a class="nav-link dropdown-toggle" href="#" id="gallery-dropdown" data-toggle="dropdown"
