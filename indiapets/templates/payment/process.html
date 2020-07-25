@@ -1,0 +1,41 @@
+{% extends 'base.html' %}
+{% load static %}
+{% load crispy_forms_tags %}
+{% block head %}
+
+<title>AppThisWeb</title>
+{% endblock %}
+{% block body %}
+<section id="pricing" class="package-section ptb-100">
+    <div class="container">
+        
+        <div class="row justify-content-center">
+
+            <div class="col-lg-5 col-md border warning-border">
+                <div class="card text-center single-pricing-pack  bg-gradient-info">
+                    <div class="card-header py-5 border-0 pricing-header ">
+                        <div class="h1 text-center mb-0"><span class="price font-weight-bolder">{{price}} &#8377;</span></div>
+                        <span class="h6 text-muted">Buy Your Pet</span>
+                    </div>
+                    <!-- <div class="card-body"> -->
+                        <ul class="list-unstyled  mb-4 pricing-feature-list ">
+                            <li>One time payment</li>
+                            <li>Best Platform for Buy Pets</li>
+                            <li>Works for any site</li>
+                            <li>Instant Access</li>
+                            <li>Auto Updates</li>
+                            <li>24/7 support</li>
+                            <!-- <li>Earn money with AdMob</li> -->
+                            <!-- <li>No monthly fees</li> -->
+                            
+                        </ul>
+                        {{form.render}}
+                    <!-- </div> -->
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+{% endblock %}
+

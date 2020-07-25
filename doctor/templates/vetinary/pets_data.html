@@ -1,0 +1,44 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block head %}
+<title>Doctor</title>
+{% endblock %}
+
+{% block body %}
+<br><br>
+<div class="container">
+    <div class="row">
+        {% for i in data %}
+
+        <div class="col-xl-4">
+
+            <div class="card">
+
+                <img class="card-img-top" src="{{i.pet_image}}" alt="Card image cap">
+            
+                <div class="card-body">
+            
+                    <h4 class="card-title"><a>{{i.pet_name }}</a></h4>
+                    <p class="card-text">
+                        Type :  {{i.pet_type }} <br>
+                        Breed : {{i.pet_breed }} <br>
+                        Gender : {{i.pet_gender }}<br>
+                        Verified : {{i.is_verified }}<br>
+                                <!-- {{i.doctor.reg_no}}<br>
+                                {{i.doctor_name}}<br> -->
+                    </p>
+                    <a href="/{{i.id}}/" class="btn btn-primary">Verify this Pet</a>
+            
+                </div>
+            
+            </div>
+
+        </div>
+        {% endfor %}
+    </div>
+</div>
+
+
+{% endblock %}
+

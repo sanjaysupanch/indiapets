@@ -1,11 +1,20 @@
 from django.contrib.auth.decorators import login_required
 from django.shortcuts import render,redirect
 from django.http import HttpResponseRedirect, HttpResponse
+from rest_framework.serializers import *
+from rest_framework import viewsets, permissions, status, generics
+from rest_framework.generics import * 
+from .serializers import SellerSerializer
+
 from django.shortcuts import *
 from .forms import *
 from .models import *
+from seller.models import *
 from django.urls import reverse_lazy
 from accounts.models import *
+
+
+
 
 @login_required
 def Pets_details(request):
@@ -29,3 +38,14 @@ def seller_details(request):
     seller_data=seller.objects.filter(user=user_instance)
     
     return render(request, 'seller/seller_details.html', {'seller_data':seller_data})
+
+
+class SellerView(generics.ListCreateAPIView):
+    queryset=seller.objects.all()
+    serializer_class=SellerSerializer
+
+class SellerUpdateView(generics.RetrieveUpdateDestroyAPIView):
+    queryset=seller.objects.all()
+    serializer_class=SellerSerializer
+    lookup_field='id'
+    

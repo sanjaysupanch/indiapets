@@ -9,23 +9,19 @@ MEDIA_DIR = os.path.join(BASE_DIR,'media')
 
 
 
-# Quick-start development settings - unsuitable for production
-# See https://docs.djangoproject.com/en/3.0/howto/deployment/checklist/
-
-# SECURITY WARNING: keep the secret key used in production secret!
 SECRET_KEY = 'w8$wisgw)k48nb&yn2ih*4icfcktg1m3b7+9(z1^y!^!te2)d@'
 
-# SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
 ALLOWED_HOSTS = ['*']
 
 
-# Application definition
 
 INSTALLED_APPS = [
     'django.contrib.admin',
     'allauth',
+    'rest_framework',
+    'rest_framework.authtoken',
     'allauth.account',
     'allauth.socialaccount',
     'allauth.socialaccount.providers.google',
@@ -42,6 +38,10 @@ INSTALLED_APPS = [
     'snowpenguin.django.recaptcha2',
     'seller',
     'pets',
+    'paypal.standard.ipn',
+    'payment',
+    'feedback',
+    # 'rest_framework',
 
 
 ]
@@ -191,12 +191,6 @@ SOCIALACCOUNT_PROVIDERS = {
     }
 }
 
-EMAIL_USE_TLS = True
-EMAIL_HOST = 'smtp.gmail.com'
-EMAIL_PORT = 587
-EMAIL_HOST_USER = 'pioneer.deo@gmail.com'
-EMAIL_HOST_PASSWORD = 'tommyjerry99'
-
 SITE_ID = 1
 ACCOUNT_EMAIL_REQUIRED = True
 ACCOUNT_USERNAME_REQUIRED = False
@@ -218,3 +212,13 @@ SOCIALACCOUNT_STORE_TOKENS=True
 ACCOUNT_SIGNUP_FORM_CLASS = 'accounts.forms.AllauthSignupForm'
 RECAPTCHA_PUBLIC_KEY = '6Lc189IUAAAAALiLOPk9cuEZw_oh5UL3P3ZlzCgI'
 RECAPTCHA_PRIVATE_KEY = '6Lc189IUAAAAAHDW6D3xfN-_dEVXnqndN84di2OZ'
+
+PAYPAL_RECEIVER_EMAIL='sb-obwuq1334185@business.example.com'
+PAYPAL_TEST =True
+
+
+EMAIL_USE_TLS = True
+EMAIL_HOST = 'smtp.gmail.com'
+EMAIL_PORT = 587
+EMAIL_HOST_USER = 'pioneer.deo@gmail.com'
+EMAIL_HOST_PASSWORD = 'tommyjerry99'

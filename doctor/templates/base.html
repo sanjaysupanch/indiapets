@@ -1,0 +1,73 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+
+<head>
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&display=swap">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.0/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/mdbootstrap/4.19.1/css/mdb.min.css" rel="stylesheet">
+
+    {% block head %}
+    <title>Doctor </title>
+    {% endblock %}
+
+</head>
+
+<body>
+    <nav class="navbar navbar-expand-md  navbar-dark bg-dark fixed-top" style="background-color:#f5f5f5">
+        <div class="navbar-header">
+            <a class="navbar-brand" style="font-family:'Roboto-Bold-eot'" href="/">&nbsp;India Pets </a>
+        </div>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="collapsibleNavbar" style="font-family:'Roboto-Bold-eot'">
+            {% if user.is_authenticated %}
+
+            <ul class="navbar-nav  ml-auto">
+                <li><a class="nav-link" href="/">Home </a></li>
+                <li><a class="nav-link" href="/seller/pets_sell/">Sell </a></li>
+                <li>
+
+                    <div class="dropdown">
+                        <a class="dropbtn nav-link">Sell </a>
+                        <div class="dropdown-content">
+                            <a href="/seller/pets_sell/">Sell Pets</a>
+                            <a href="/seller/seller-data/">Seller Profile</a>
+                        </div>
+                    </div>
+
+                </li>
+
+
+                <li><a class="nav-link" href='/accounts/logout/'>Logout</a></li>
+
+            </ul>
+            {% else %}
+            <ul class="navbar-nav ml-auto">
+                <li><a class="nav-link" href="/">Home </a></li>
+
+                <li><a class="nav-link" href="/accounts/signup/">Register </a></li>
+                <li><a class="nav-link" href='/accounts/login/'>Login </a></li>
+            </ul>
+            {% endif %}
+        </div>
+    </nav><br><br>
+
+    {% block body %}
+
+    {% endblock %}
+
+
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script type="text/javascript"
+        src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.4/umd/popper.min.js"></script>
+    <script type="text/javascript"
+        src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.0/js/bootstrap.min.js"></script>
+    <script type="text/javascript"
+        src="https://cdnjs.cloudflare.com/ajax/libs/mdbootstrap/4.19.1/js/mdb.min.js"></script>
+</body>
+
+</html>

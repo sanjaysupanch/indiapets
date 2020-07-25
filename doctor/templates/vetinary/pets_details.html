@@ -1,0 +1,44 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block head %}
+<title>Doctor</title>
+{% endblock %}
+
+{% block body %}
+<br><br>
+<div class="container">
+    <div class="row">
+
+
+        <div class="col-xl-4">
+
+            <div class="card">
+
+                <img class="card-img-top" src="https://images.assetsdelivery.com/compings_v2/asphoto777/asphoto7771804/asphoto777180400304.jpg" alt="Card image cap">
+
+                <div class="card-body">
+
+                    <h4 class="card-title"><a>Dr. Pia Roy </a></h4>
+                    <p class="card-text">
+                        Experience: 2 years<br>
+                        Gender : Female<br>
+                        <form method="POST" >
+                            {% csrf_token %}
+                            <input type="checkbox" id="verify" name="verify" value="True">
+                            <label for="verify"> I verified this pet</label><br>
+                            <button type="submit" class="btn btn-primary w-75">Submit</button>
+                        </form>
+                    </p>
+                    
+
+                </div>
+
+            </div>
+
+        </div>
+    </div>
+</div>
+
+
+{% endblock %}

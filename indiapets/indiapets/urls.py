@@ -14,9 +14,13 @@ urlpatterns = [
     path('accounts/', include('accounts.urls')),
     path('accounts/', include('allauth.urls')),
     path('seller/', include('seller.urls')),
+    path('payment/', include('payment.urls')),
+    path('api/', include('feedback.urls')),
+    path('payment/paypal/', include('paypal.standard.ipn.urls')),
     path('',include('pets.urls')),
-    path('feedback/', feedback_views.feedback),
+    # path('feedback/', feedback_views.feedback),
     path('Doctor/', doctor_views.index),
+    
 ]
 
 urlpatterns += static(settings.STATIC_URL,document_root=settings.STATIC_ROOT)
