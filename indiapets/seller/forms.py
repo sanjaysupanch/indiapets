@@ -9,6 +9,6 @@ class sellerForm(forms.ModelForm):
 
     class Meta:
         model=seller
-        fields=['pet_name', 'pet_breed',  'pet_image', 'pet_age', 'pet_gender', 'pet_price', 'pet_description']
+        fields=['pet_name', 'pet_type', 'pet_breed',  'pet_image', 'pet_age', 'pet_gender', 'pet_price', 'pet_description']
 
  

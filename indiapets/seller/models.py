@@ -18,3 +18,4 @@ class seller(models.Model):
     is_verified = models.BooleanField(default=False)
     doctor_reg_no = models.CharField(max_length=120, null=True, blank=True)
     doctor_name = models.CharField(max_length=120, null=True, blank=True)
+    pdf = models.CharField(max_length=200, null=True, blank=True)

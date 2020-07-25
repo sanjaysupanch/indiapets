@@ -9,7 +9,7 @@
 {% endblock %}
 
 {% block body %}
-<br><br>
+<br><br><br><br><br><br>
 <center>
     <div class="container border border-info w-50"><br>
         <h1>Animal Description Form</h1>
@@ -17,13 +17,20 @@
         <br>
         <form method="POST" enctype="multipart/form-data">
             {% csrf_token %}
-
-            <div id="div_id_pet_name" class="control-group ">
+            <div id="div_id_pet_name" class="control-group">
                 <label for="id_pet_name" class="control-label requiredField">
                     Pet name<span class="asteriskField">*</span>
                 </label>
+                <div class="controls">
+                    <input type="text" name="pet_name" class="textInput w-50" required id="id_pet_name">
+                </div>
+            </div>
+            <div id="div_id_pet_type" class="control-group ">
+                <label for="id_pet_type" class="control-label requiredField">
+                    Pet type<span class="asteriskField">*</span>
+                </label>
                 <div class="controls ">
-                    <select name="pet_name" class="select w-50 bg-light" required id="id_pet_name">
+                    <select name="pet_type" class="select w-50 bg-light" required id="id_pet_type">
                         <option value="">---------</option>
                         <option value="Dog">Dog</option>
                         <option value="Cat">Cat</option>
@@ -100,7 +107,7 @@
 </center>
 <script>
     $(document).ready(function () {
-    $("#id_pet_name").change(function () {
+    $("#id_pet_type").change(function () {
         var val = $(this).val();
         if (val == "Dog") {
             $("#id_pet_breed").html("<option value='German Shepherd'>German Shepherd</option><option value='Labrador'>Labrador</option><option value='Alaskan'>Alaskan</option><option value='India Spitz'>India Spitz</option>");

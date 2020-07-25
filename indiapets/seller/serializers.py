@@ -7,7 +7,7 @@ from seller.models import *
 class SellerSerializer(serializers.ModelSerializer):
     class Meta:
         model=seller
-        fields= ['id', 'pet_type', 'pet_name', 'pet_breed', 'pet_image', 'pet_gender', 'is_verified', 'doctor_reg_no', 'doctor_name',]
+        fields= ['id', 'pet_type', 'pet_name', 'pet_breed', 'pet_image', 'pet_gender', 'is_verified', 'doctor_reg_no', 'doctor_name', 'pdf']
         read_only_fields=('id','pet_type','pet_name', 'pet_breed', 'pet_image', 'pet_gender')
 
 
