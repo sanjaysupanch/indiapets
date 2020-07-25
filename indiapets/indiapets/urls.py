@@ -20,6 +20,7 @@ urlpatterns = [
     path('',include('pets.urls')),
     # path('feedback/', feedback_views.feedback),
     path('Doctor/', doctor_views.index),
+    path('adoption/',include('adoption.urls')),
     
 ]
 

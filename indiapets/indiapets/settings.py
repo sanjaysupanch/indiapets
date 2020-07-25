@@ -41,6 +41,7 @@ INSTALLED_APPS = [
     'paypal.standard.ipn',
     'payment',
     'feedback',
+    'adoption'
     # 'rest_framework',
 
 
