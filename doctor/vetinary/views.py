@@ -32,6 +32,6 @@ def pet_update(request, **kwargs):
         r = requests.put(url=API_ENDPOINT, data=data, headers=headers)
         pastebin_url = r.content
         print("The pastebin URL is:%s" % pastebin_url)
-        return HttpResponse('<h1>hweuwe</h1>')
+        return HttpResponse('<h1>This pet is Verified</h1>')
     
     return render(request, 'vetinary/pets_details.html', {})
