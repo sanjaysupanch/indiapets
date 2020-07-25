@@ -13,6 +13,9 @@ from accounts.forms import *
 def process_payment(request, **kwargs):
     ids=kwargs['id']
     pet_price=kwargs['pet_price']
+    pet_price= int(int(pet_price)/74)
+    
+    pet_price=str(pet_price)
     pet_name=kwargs['pet_name']
     
     email=str(request.user)
@@ -27,7 +30,7 @@ def process_payment(request, **kwargs):
         'amount': pet_price,
         'item_name': pet_name,
         'invoice': invoice,
-        'currency_code': 'INR',
+        'currency_code': 'USD',
         'custom':data,
         'notify_url': 'http://{}{}'.format(host,reverse('paypal-ipn')),
         'return_url': 'http://{}{}'.format(host, reverse('payment_done')),
